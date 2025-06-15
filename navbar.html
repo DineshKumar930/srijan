@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सृजन Foundation - Empowering Education</title>
+    <link rel="icon" href="images/logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        *{
+                margin: 0px;
+                padding: 0px;
+        }
+        /* Add these styles for scroll animations */
+        [data-aos] {
+            transition-property: transform, opacity;
+        }
+        
+        /* Custom animation classes */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+        }
+        
+        .slide-up {
+            transform: translateY(50px);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+        
+        .slide-up.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .slide-left {
+            transform: translateX(50px);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+        
+        .slide-left.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .slide-right {
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+        
+        .slide-right.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .zoom-in {
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+        
+        .zoom-in.visible {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo" data-aos="fade-down">
+                <img src="images/logo.jpg" style="height:50px;width:50px;border-radius:50%">&nbsp;&nbsp;
+                <span style="">सृजन</span> &nbsp;	<span style="font-size:23px;color:white"> Foundation</span>
+            </a>
+            <div class="menu-toggle" id="menuToggle" data-aos="fade-down">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="mainNav" data-aos="fade-down">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#expect">Our Work</a></li>
+                    <li><a href="donate2.html">Donate</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="gall.html">Gallary</a></li>
+                    <li><a href="#stories">Impact</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade" data-aos-duration="1000">
+        <div class="container">
+            <h3 data-aos="fade-up" data-aos-delay="300">Empowering Communities, Transforming Lives</h3>
+            <p data-aos="fade-up" data-aos-delay="500">Srijan Foundation is a non-profit organization dedicated to sustainable development, social empowerment, and inclusive growth. We work at the grassroots level to uplift marginalized communities through education, healthcare, livelihood programs, and environmental conservation.</p>
+            <div class="hero-content" data-aos="fade-up" data-aos-delay="700">
+                <a href="#donation" class="btn">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Our Mission</h2>
+            </div>
+            <div class="mission-content">
+                <div class="mission-text" data-aos="fade-right">
+                    <p>At सृजन Foundation, we believe that every child in India deserves access to quality education and coaching, regardless of their economic background. Our mission is to bridge the educational gap by providing free & subsidized coaching to underprivileged students and also a holistic development of the student to compete in their generation.</p>
+                    <p>We focus on holistic development that goes beyond academics, nurturing critical thinking, problem-solving skills, and confidence in our students. Our team of dedicated educators and volunteers work tirelessly to create an environment where students can thrive and realize their full potential.</p>
+                    <p>Since our inception in 2021, we have impacted over 1,000 students across 3 districts in UP India.</p>
+                </div>
+                <div class="mission-image" data-aos="fade-left" data-aos-delay="300">
+                    <img src="images/main.png" alt="Students learning">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Expect Section -->
+    <section class="expect-section" id="expect">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>What You Can Expect</h2>
+                <p style="margin-top:5px" data-aos="fade-up" data-aos-delay="200">Our commitment to transforming education in India</p>
+            </div>
+            
+            <div class="expect-grid">
+                <!-- Expectation Card 1 -->
+                <div class="expect-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="expect-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Quality Education for Every Child</h3>
+                    <p>Expert faculty with proven track records in competitive exam preparation</p>
+                    <div class="expect-details">
+                        <ul>
+                            <li>Personalized attention</li>
+                            <li>Regular assessments</li>
+                            <li>Comprehensive study materials</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Expectation Card 2 -->
+                <div class="expect-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="expect-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Holistic Development</h3>
+                    <p>Beyond academics - we nurture critical thinking and life skills</p>
+                    <div class="expect-details">
+                        <ul>
+                            <li>Personality development sessions</li>
+                            <li>Career counseling</li>
+                            <li>Stress management workshops</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Expectation Card 3 -->
+                <div class="expect-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="expect-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Transparency & Accountability</h3>
+                    <p>Quality coaching shouldn't be limited by financial constraints</p>
+                    <div class="expect-details">
+                        <ul>
+                            <li>Scholarships available</li>
+                            <li>Flexible payment options</li>
+                            <li>Free coaching for deserving students</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Expectation Card 4 -->
+                <div class="expect-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="expect-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Innovation in Education</h3>
+                    <p>Our track record speaks for itself</p>
+                    <div class="expect-details">
+                        <ul>
+                            <li>1000+ selections in JEE/NTSE</li>
+                            <li>750+ medical entrances</li>
+                            <li>85% success rate in board exams</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="dashboard" data-aos="fade-up">
+        <h1>Student Enrollment Statistics</h1>
+        <div class="chart-container">
+            <canvas id="enrollmentChart"></canvas>
+        </div>
+        <div class="summary">
+            <h2>Total Enrollment: <span id="totalStudents">0</span></h2>
+            <div id="legend" class="chart-legend"></div>
+        </div>
+    </div>
+
+    <!-- Director section-->
+    <section class="volunteers-section" data-aos="fade-up">
+        <h1 style="color:#4a148c;">Meet Our Leadership</h1>
+        <div class="volunteers-grid">
+            <!-- Volunteer 1 -->
+            <div class="volunteer-card" data-aos="flip-left" data-aos-delay="0">
+                <img src="images/ankit.jpg" alt="Volunteer 1">
+                <div class="volunteer-name">Mr. Ankit Yadav</div>
+                <div class="volunteer-role">Field Coordinator</div>
+            </div>
+
+            <!-- Volunteer 2 -->
+            <div class="volunteer-card" data-aos="flip-left" data-aos-delay="100">
+                <img src="images/prabhat.png" alt="Volunteer 2">
+                <div class="volunteer-name">Mr. Prabhat Yadav</div>
+                <div class="volunteer-role">Community Support</div>
+            </div>
+
+            <!-- Volunteer 3 -->
+            <div class="volunteer-card" data-aos="flip-left" data-aos-delay="200">
+                <img src="images/abc.png" alt="Volunteer 3">
+                <div class="volunteer-name">Mr. Ranjeet Kumar</div>
+                <div class="volunteer-role">Tech Assistant</div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Volunteers Section -->
+    <section class="volunteers-section" id="volunteer" data-aos="fade-up">
+        <h1 style="color:#4a148c" class="section-title">Meet Our Volunteers</h1>
+        <div class="volunteers-grid">
+            <!-- Volunteer 1 -->
+            <div class="volunteer-card" data-aos="zoom-in" data-aos-delay="0">
+                <img src="images/ankit.jpg" alt="Volunteer 1">
+                <div class="volunteer-name">Mr. Ankit Yadav</div>
+                <div class="volunteer-role">Field Coordinator</div>
+            </div>
+
+            <!-- Volunteer 2 -->
+            <div class="volunteer-card" data-aos="zoom-in" data-aos-delay="100">
+                <img src="images/prabhat.png" alt="Volunteer 2">
+                <div class="volunteer-name">Mr. Prabhat Yadav</div>
+                <div class="volunteer-role">Community Support</div>
+            </div>
+
+            <!-- Volunteer 3 -->
+            <div class="volunteer-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="images/akash.jpg" alt="Volunteer 3">
+                <div class="volunteer-name">Mr. Akash Maurya</div>
+                <div class="volunteer-role">Tech Assistant</div>
+            </div>
+
+            <!-- Volunteer 4 -->
+            <div class="volunteer-card" data-aos="zoom-in" data-aos-delay="300">
+                <img src="images/vijay.jpg" alt="Volunteer 3">
+                <div class="volunteer-name">Mr. Vijay Pal</div>
+                <div class="volunteer-role">Tech Assistant</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation" id="donation" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Support Our Cause</h2>
+            </div>
+            <div class="donation-cards">
+                <div class="donation-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="images/paisa.jpg" alt="Sponsor a child">
+                    <div class="donation-info">
+                        <h3>Sponsor coaching fee of One Student</h3>
+                        <p>₹1000/month covers coaching fees, study materials, and mentorship for one student.</p>
+                        <a href="donate2.html" class="btn" target="_blank">Sponsor Now</a>
+                    </div>
+                </div>
+                <div class="donation-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/paisa.jpg" alt="Sponsor a child">
+                    <div class="donation-info">
+                        <h3>Sponsor a Child</h3>
+                        <p>₹1000/month covers coaching fees, study materials, and mentorship for one student.</p><br>
+                        <a href="donate2.html" class="btn" target="_blank">Sponsor Now</a>
+                    </div>
+                </div>
+                <div class="donation-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/paisa.jpg" alt="Sponsor a child">
+                    <div class="donation-info">
+                        <h3>General Donation</h3>
+                        <p>₹1000/month covers coaching fees, study materials, and mentorship for one student.</p><br>
+                        <a href="donate2.html" class="btn" target="_blank">Donate</a>
+                    </div>
+                </div>
+                <div class="donation-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/pen.jpg" alt="Sponsor a child">
+                    <div class="donation-info">
+                        <h3>Donate Pen</h3>
+                        <p>Donate just ₹10 to gift a pen and support a child's education. A small help from you can write someone's big future</p>
+                        <a href="#" class="donate-btn btn" data-amount="10">Donate ₹10</a>
+                    </div>
+                </div>
+                <div class="donation-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/pencil.jpg" alt="Fund a center">
+                    <div class="donation-info">
+                        <h3>Donate Pencil</h3>
+                        <p>Just ₹5 can provide a pencil to a child in need. Your small help can sketch a child's path to learning.</p><br>
+                        <a href="#" class="donate-btn btn" data-amount="5">Donate ₹5</a>
+                    </div>
+                </div>
+                <div class="donation-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="images/copy.jpg" alt="General donation">
+                    <div class="donation-info">
+                        <h3>Donate Notebook</h3>
+                        <p>With just ₹20, you can donate a notebook to a child. Help them write their dreams, one page at a time.</p><br>
+                        <a href="#" class="donate-btn btn" data-amount="20">Donate ₹20</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Together Section -->
+    <section class="together" id="together" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Together We Changed Lives</h2>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="0">
+                    <i class="fas fa-quote-left"></i>
+                    <p>सृजन Foundation gave me the confidence and skills to crack the JEE exam. Today I'm studying at MNIT Prayagraj, a dream I never thought possible.</p>
+                    <div class="testimonial-author">- Sanat Maurya, MNIT Prayagraj</div>
+                </div>
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-quote-left"></i>
+                    <p>As a volunteer teacher, I've seen firsthand how this organization transforms lives. The dedication of both students and teachers is inspiring.</p>
+                    <div class="testimonial-author">- Ranjeet Prajapati, Volunteer</div>
+                </div>
+                <div class="testimonial" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-quote-left"></i>
+                    <p>I received free NEET coaching from सृजन. Now I am pursuing MBBS in Lucknow. We're forever grateful for this opportunity.</p><br>
+                    <div class="testimonial-author">- Mr Rishabh Gupta, Student</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Section -->
+    <section class="thoughts" id="thoughts" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Our Impactful Moments</h2>
+            </div>
+            
+            <section class="event-section">
+                <div class="event-grid">
+                    <div class="event-card" data-aos="fade-up" data-aos-delay="0">
+                        <img src="images/chess.jpg" alt="Event 1" class="event-image">
+                        <div class="event-content">
+                            <h3 class="event-title">Chess Tournament</h3>
+                            <div class="event-date">August 15, 2022</div>
+                            <p class="event-description">Join our beginner-friendly JavaScript session and build your first interactive web page.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/2.jpeg" alt="Event 2" class="event-image">
+                        <div class="event-content">
+                            <h3 class="event-title">Free Education Program</h3>
+                            <div class="event-date">Agust 15, 2022</div>
+                            <p class="event-description">Spreading basic computer education and mobile literacy in rural areas.</p>
+                        </div>
+                    </div>
+
+                    <div class="event-card" data-aos="fade-up" data-aos-delay="400">
+                        <img src="images/emp.jpg" alt="Event 3" class="event-image">
+                        <div class="event-content">
+                            <h3 class="event-title">Women Empowerment Seminar</h3>
+                            <div class="event-date">July 5, 2025</div>
+                            <p class="event-description">An inspiring event to educate and motivate women through stories and support programs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Thoughts Section -->
+    <section class="thoughts" id="thoughts" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Your Thoughts on Indian Education</h2>
+            </div>
+            <div class="thoughts-content" data-aos="fade-up">
+                <p style="text-align:justify">We believe Indian education needs to evolve beyond rote learning and focus more on critical thinking, creativity, and practical skills. The current system creates unnecessary stress while often failing to prepare students for real-world challenges.</p>
+                <p>At सृजन Foundation, we're working to change this by:</p>
+                <ul style="text-align: left; max-width: 600px; margin: 20px auto;padding:10px;" data-aos="fade-up">
+                    <li>Incorporating project-based learning in our curriculum</li>
+                    <li>Teaching financial literacy and life skills</li>
+                    <li>Focusing on mental health and stress management</li>
+                    <li>Using technology to make learning more interactive</li>
+                </ul>
+                <p>What changes would you like to see in Indian education? Share your thoughts with us!</p>
+                <a href="#" class="btn" data-aos="fade-up">Share Your Ideas</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="0">
+                    <h3>About Us</h3>
+                    <p>सृजन Foundation is a non-profit organization dedicated to providing quality coaching and mentorship to underprivileged students across India since 2022.</p>
+                </div>
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#donation">Donate</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#volunteers">Volunteer</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Gopiganj NH-19 Bhadohi 221303</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:7317783161">+91 7317783161</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@srijanfoundation.org">info@srijanfoundation.org</a>
+                    </div>
+                </div>
+                <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates on our programs and success stories.</p>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom" data-aos="fade-up">
+                <p>&copy; 2022 सृजन Foundation. All Rights Reserved. | Designed with ❤️ for India's Future</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+        
+
+    </script>
+</body>
+</html>

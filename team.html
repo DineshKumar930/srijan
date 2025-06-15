@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Education Foundation</title>
+	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+			body{
+			 background: linear-gradient(to right, white, #ffe6f0);
+			}
+         :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #ff6b6b;
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+            --white: #fff;
+            --black: #000;
+            --gray: #777;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container1 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .member-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .member-info p.role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-info p.bio {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .join-team {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+			background:white;
+            border-radius: 12px;
+            
+        }
+
+        .join-team h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .join-team p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: white;
+            color: #ffe6f0;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid blue;
+            color: blue;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            padding: 2rem;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--dark);
+        }
+
+        .modal-member {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        .modal-image {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 350px;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-info p.role {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-info p.bio {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .modal-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .modal-member {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-image {
+                height: 250px;
+                width: 250px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+
+            .join-team {
+                padding: 1.5rem;
+            }
+
+            .join-team h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+	
+ <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="images/logo.jpg" style="height:50px;width:50px;border-radius:50%">&nbsp;&nbsp;
+                <span style="">सृजन</span> &nbsp;	<span style="font-size:23px;color:white"> Foundation</span>
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="#expect">Our Work</a></li>
+					<li><a href="donate2.html">Donate</a></li>
+					<li><a href="team.html">Team</a></li>
+					<li><a href="gall.html">Gallary</a></li>
+					<li><a href="#stories">Impact</a></li>
+					<li><a href="event.html">Events</a></li>
+								
+					
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<br>
+<br>
+
+
+
+    <section class="team-section">
+        <div class="container1">
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+                <p>Passionate educators and mentors dedicated to providing free education and guidance to underprivileged students.</p>
+            </div>
+
+            <div class="team-container">
+                <!-- Team Member 1 -->
+                <div class="team-member" onclick="openModal('modal1')">
+                    <div class="member-image">
+                        <img src="images/ankit.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="member-info">
+                        <h3>Mr. Ankit Yadav</h3>
+                        <p class="role">Founder & CEO</p>
+                        <p class="bio">Education activist with 15+ years experience in nonprofit management.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member" onclick="openModal('modal2')">
+                    <div class="member-image">
+                        <img src="images/prabhat.png" alt="David Chen">
+                    </div>
+                    <div class="member-info">
+                        <h3>Mr. Prabhat Yadav</h3>
+                        <p class="role">Education Director</p>
+                        <p class="bio">Curriculum specialist focused on accessible learning for all students.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-member" onclick="openModal('modal3')">
+                    <div class="member-image">
+                        <img src="images/abc.png" alt="Priya Patel">
+                    </div>
+                    <div class="member-info">
+                        <h3>Mr.Ranjeet Kumar</h3>
+                        <p class="role">Community Outreach</p>
+                        <p class="bio">Connects with underserved communities to identify students in need.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+			
+            <div class="join-team">
+                <h3>Want to Join Our Mission?</h3>
+                <p>We're always looking for passionate individuals to help us provide free education to underprivileged students.</p>
+                <a href="#" class="btn btn-outline">Volunteer With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal 1 -->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+            <div class="modal-member">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Sarah Johnson">
+                </div>
+                <div class="modal-info">
+                    <h3>Sarah Johnson</h3>
+                    <p class="role">Founder & CEO</p>
+                    <p class="bio">Sarah founded our organization in 2010 after witnessing firsthand the educational disparities in underprivileged communities. With a Master's in Education Policy and 15 years of nonprofit experience, she leads our strategic vision and ensures we stay true to our mission of free education for all.</p>
+                    <p class="bio">Under her leadership, we've expanded to serve over 10,000 students annually across 5 regions. Sarah believes education is the most powerful tool for social change.</p>
+                    <div class="modal-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+            <div class="modal-member">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="David Chen">
+                </div>
+                <div class="modal-info">
+                    <h3>David Chen</h3>
+                    <p class="role">Education Director</p>
+                    <p class="bio">David brings 12 years of classroom experience and curriculum development expertise to our team. He designs our learning programs to be accessible, engaging, and effective for students from diverse backgrounds.</p>
+                    <p class="bio">With a PhD in Educational Psychology, David ensures our teaching methods are evidence-based and tailored to each student's needs. He also leads our teacher training programs.</p>
+                    <div class="modal-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+            <div class="modal-member">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Priya Patel">
+                </div>
+                <div class="modal-info">
+                    <h3>Priya Patel</h3>
+                    <p class="role">Community Outreach Coordinator</p>
+                    <p class="bio">Priya builds relationships with communities to identify students who would benefit most from our programs. Fluent in four languages, she helps bridge cultural and linguistic barriers to education access.</p>
+                    <p class="bio">Before joining us, Priya worked with refugee support organizations and brings that experience in serving marginalized populations to her work every day.</p>
+                    <div class="modal-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal" id="modal4">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
+            <div class="modal-member">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Michael Rodriguez">
+                </div>
+                <div class="modal-info">
+                    <h3>Michael Rodriguez</h3>
+                    <p class="role">Technology Lead</p>
+                    <p class="bio">Michael develops our digital learning platforms that allow us to reach students in remote areas. His technical solutions have enabled us to scale our impact significantly while keeping costs low.</p>
+                    <p class="bio">With a background in both computer science and education, Michael creates tools that are both technically robust and pedagogically sound. He also leads our digital literacy programs for students.</p>
+                    <div class="modal-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="#"><i class="fas fa-envelope"></i> Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+		
+		<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>सृजन Foundation is a non-profit organization dedicated to providing quality coaching and mentorship to underprivileged students across India since 2022.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#donation">Donate</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#volunteers">Volunteer</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Gopiganj NH-19 Bhadohi 221303</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 7317783161</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@srijanfoundation.org</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates on our programs and success stories.</p>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2022 सृजन Foundation. All Rights Reserved. | Designed with ❤️ for India's Future</p>
+            </div>
+        </div>
+    </footer>
+
+	<script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+        
+        // Animate bars on scroll
+        window.addEventListener('scroll', () => {
+            const bars = document.querySelectorAll('.bar');
+            const impactSection = document.querySelector('.impact');
+            const sectionPosition = impactSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (sectionPosition < screenPosition) {
+                bars.forEach(bar => {
+                    bar.style.width = bar.style.width; // This triggers the CSS transition
+                });
+            }
+        });
+    </script>
+	
+	
+	
+	<script src="script.js"></script>
+</body>
+</html>

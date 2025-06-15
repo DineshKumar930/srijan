@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Our Cause - Education NGO</title>
+    <link rel="stylesheet" href="style.css">
+    
+		
+    
+</head>
+<body>
+        <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="images/logo.jpg" style="height:50px;width:50px;border-radius:50%">&nbsp;&nbsp;
+                <span style="">सृजन</span> &nbsp;	<span style="font-size:23px;color:white"> Foundation</span>
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="#expect">Our Work</a></li>
+					<li><a href="donate2.html">Donate</a></li>
+					<li><a href="team.html">Team</a></li>
+					<li><a href="gall.html">Gallary</a></li>
+					<li><a href="#stories">Impact</a></li>
+					<li><a href="event.html">Events</a></li>
+								
+					
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="donation-container">
+        <h1 class="section-title">Support Our Cause<hr style="width: 80px; border:2px solid #ff6f00;  margin: auto;"> </h1>
+        
+        
+        <div class="donation-content">
+            <div class="donation-text">
+                <h2>Your Donation Changes Lives</h2>
+                <p>Every contribution you make helps us provide free education to underprivileged children from rural villages to urban centers. Your support ensures:</p>
+                
+                <ul style="margin-bottom: 25px; padding-left: 20px; color: #555;">
+                    <li style="margin-bottom: 10px;">Quality education materials for students</li>
+                    <li style="margin-bottom: 10px;">Nutritious meals for better learning</li>
+                    <li style="margin-bottom: 10px;">Transportation for village students</li>
+                    <li style="margin-bottom: 10px;">Teacher training programs</li>
+                </ul>
+                
+                <div class="donation-options">
+                    <h3>Select Donation Amount (₹)</h3>
+                    <div class="donation-amounts">
+                        <button class="amount-btn active">1</button>
+                        <button class="amount-btn">500</button>
+                        <button class="amount-btn">1000</button>
+                        <button class="amount-btn">2000</button>
+                        <button class="amount-btn">5000</button>
+                    </div>
+                    
+                    <input type="number" class="custom-amount" placeholder="Or enter custom amount">
+                    
+                    <a href="#" class="donate-btn">Donate Now</a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+	
+	<!-- Add this modal HTML before the closing body tag -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Scan to Donate via Google Pay</h3>
+            <div class="modal-amount">Amount: ₹<span id="displayAmount">100</span></div>
+            <div class="modal-qr-code">
+                <img id="dynamicQrCode" src="" alt="Google Pay QR Code">
+            </div>
+            <div class="modal-upi-id">your.upi.id@okhdfcbank</div>
+            <p class="qr-instructions">1. Open Google Pay app<br>
+            2. Tap on "Scan QR Code"<br>
+            3. Scan this code and confirm payment</p>
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #777;">Thank you for your support!</p>
+        </div>
+    </div>
+
+    
+    
+	
+	<!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>सृजन Foundation is a non-profit organization dedicated to providing quality coaching and mentorship to underprivileged students across India since 2022.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#donation">Donate</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#volunteers">Volunteer</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Gopiganj NH-19 Bhadohi 221303</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:7317783161">+91 7317783161</a>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                    <a href="mailto:info@srijanfoundation.org">info@srijanfoundation.org</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates on our programs and success stories.</p>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2022 सृजन Foundation. All Rights Reserved. | Designed with ❤️ for India's Future</p>
+            </div>
+        </div>
+    </footer>
+<script src="script.js"></script>
+    <script>
+        // Simple JavaScript to handle amount selection
+        document.querySelectorAll('.amount-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.amount-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Update the custom amount field
+                document.querySelector('.custom-amount').value = this.textContent;
+            });
+        });
+        
+        // Update button active state when custom amount is entered
+        document.querySelector('.custom-amount').addEventListener('input', function() {
+            if (this.value) {
+                document.querySelectorAll('.amount-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+            }
+        });
+		
+		 // Function to generate dynamic UPI QR code URL
+        function generateQrCode(amount) {
+            const upiId = "7317783161@airtel"; // Replace with your UPI ID
+            const recipientName = "The Learning Hub"; // Replace with your NGO name
+            const currency = "INR";
+            
+            // Construct the UPI payment URL
+            const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(recipientName)}&am=${amount}&cu=${currency}`;
+            
+            // Generate QR code using a free QR code API
+            return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiUrl)}`;
+        }
+        
+        // Function to open modal with dynamic QR code
+        function openDonationModal(amount) {
+            const modal = document.getElementById("qrModal");
+            const qrCodeImg = document.getElementById("dynamicQrCode");
+            const displayAmount = document.getElementById("displayAmount");
+            
+            // Update the amount display
+            displayAmount.textContent = amount;
+            
+            // Generate and set the QR code image
+            qrCodeImg.src = generateQrCode(amount);
+            
+            // Show the modal
+            modal.style.display = "block";
+        }
+        
+        // Close modal when clicking X
+        document.querySelector(".close-btn").addEventListener("click", function() {
+            document.getElementById("qrModal").style.display = "none";
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener("click", function(event) {
+            if (event.target == document.getElementById("qrModal")) {
+                document.getElementById("qrModal").style.display = "none";
+            }
+        });
+        
+        // Update donate button to open modal
+        document.querySelector(".donate-btn").addEventListener("click", function(e) {
+            e.preventDefault();
+            
+            // Get the selected amount
+            let amount = document.querySelector(".custom-amount").value;
+            
+            // If no custom amount, get the active button amount
+            if (!amount) {
+                const activeBtn = document.querySelector(".amount-btn.active");
+                if (activeBtn) {
+                    amount = activeBtn.textContent;
+                } else {
+                    amount = "100"; // Default amount
+                }
+            }
+            
+            // Validate amount
+            if (isNaN(amount) || amount <= 0) {
+                alert("Please enter a valid donation amount");
+                return;
+            }
+            
+            // Open modal with the amount
+            openDonationModal(amount);
+        });
+		
+		
+    </script>
+</body>
+</html>

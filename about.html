@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - [Foundation Name]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* Add this new CSS for scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Delay classes for staggered animations */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="images/logo.jpg" style="height:50px;width:50px;border-radius:50%">&nbsp;&nbsp;
+                <span style="">सृजन</span> &nbsp;	<span style="font-size:23px;color:white"> Foundation</span>
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#expect">Our Work</a></li>
+                    <li><a href="donate2.html">Donate</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="gall.html">Gallary</a></li>
+                    <li><a href="#stories">Impact</a></li>
+                    <li><a href="event.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Header Section -->
+    <section class="about-header scroll-animate">
+        <div class="container">
+            <h1 class="animate__animated animate__fadeInUp">Transforming Lives Through Education</h1>
+            <p class="animate__animated animate__fadeInUp">For over a decade, [Foundation Name] has been bridging the educational gap for underprivileged students, providing opportunities where none existed before.</p>
+            <a href="#donate" class="btn animate__animated animate__fadeInUp">Support Our Cause</a>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <div class="founder-container">
+                <div class="founder-image scroll-animate delay-1">
+                    <img src="images/prabhat.png" alt="Founder [Name]">
+                </div>
+                <div class="founder-content scroll-animate delay-2">
+                    <h2>Our Founder's Vision</h2>
+                    <p>Growing up in poverty, our founder [Name] experienced firsthand how lack of educational resources can limit a child's potential. Despite these challenges, [he/she] persevered and eventually earned a scholarship to [University Name].</p>
+                    
+                    <p class="founder-quote">"Education was my ladder out of poverty, but I saw too many brilliant minds left behind simply because they couldn't afford books or school fees. I founded this organization to be that ladder for others."</p>
+                    
+                    <p>In 2010, with just 20 students in a single classroom, [Name] began what would become [Foundation Name]. Today, we've grown to serve over 10,000 students annually across multiple regions.</p>
+                    
+                    <p class="founder-signature">— Prabhat Yadav</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-container scroll-animate">
+                <h2>Our Mission</h2>
+                <p>At [Foundation Name], we believe every child deserves quality education regardless of their economic background. We work to eliminate barriers to education through scholarships, school supplies, infrastructure development, and teacher training in underserved communities.</p>
+                
+                <div class="mission-stats">
+                    <div class="stat-item scroll-animate delay-1">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Students Supported</div>
+                    </div>
+                    <div class="stat-item scroll-animate delay-2">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Schools Partnered</div>
+                    </div>
+                    <div class="stat-item scroll-animate delay-3">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Districts Reached</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Focus Section -->
+    <section class="education-focus">
+        <div class="container">
+            <h2 class="scroll-animate">How We Help Poorer Students</h2>
+            <div class="focus-container">
+                <div class="focus-item scroll-animate delay-1">
+                    <div class="focus-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Free Learning Materials</h3>
+                    <p>We provide textbooks, notebooks, and digital learning tools to students who couldn't otherwise afford them.</p>
+                </div>
+                
+                <div class="focus-item scroll-animate delay-2">
+                    <div class="focus-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Scholarship Programs</h3>
+                    <p>Full and partial scholarships for deserving students to attend quality schools and universities.</p>
+                </div>
+                
+                <div class="focus-item scroll-animate delay-3">
+                    <div class="focus-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>School Meal Programs</h3>
+                    <p>Nutritious meals to ensure students can focus on learning rather than hunger.</p>
+                </div>
+            </div>
+            
+            <div class="focus-container" style="margin-top: 30px;">
+                <div class="focus-item scroll-animate delay-1">
+                    <div class="focus-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Digital Literacy</h3>
+                    <p>Computer labs and technology training to bridge the digital divide in poor communities.</p>
+                </div>
+                
+                <div class="focus-item scroll-animate delay-2">
+                    <div class="focus-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Teacher Training</h3>
+                    <p>Professional development for educators in underfunded schools to improve teaching quality.</p>
+                </div>
+                
+                <div class="focus-item scroll-animate delay-3">
+                    <div class="focus-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>School Infrastructure</h3>
+                    <p>Building and renovating classrooms, libraries, and sanitation facilities in poor areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column scroll-animate delay-1">
+                    <h3>About Us</h3>
+                    <p>सृजन Foundation is a non-profit organization dedicated to providing quality coaching and mentorship to underprivileged students across India since 2022.</p>
+                </div>
+                <div class="footer-column scroll-animate delay-2">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#donation">Donate</a></li>
+                        <li><a href="#impact">Our Impact</a></li>
+                        <li><a href="#volunteers">Volunteer</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column scroll-animate delay-3">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Gopiganj NH-19 Bhadohi 221303</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 7317783161</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@srijanfoundation.org</span>
+                    </div>
+                </div>
+                <div class="footer-column scroll-animate delay-4">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates on our programs and success stories.</p>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom scroll-animate">
+                <p>&copy; 2022 सृजन Foundation. All Rights Reserved. | Designed with ❤️ for India's Future</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add scroll animation classes to elements
+            const animateElements = document.querySelectorAll('.scroll-animate');
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Function to handle scroll events
+            function handleScroll() {
+                animateElements.forEach(element => {
+                    if (isInViewport(element)) {
+                        element.classList.add('visible');
+                    } else {
+                        // Optional: Remove 'visible' class when element is out of view
+                        // element.classList.remove('visible');
+                    }
+                });
+            }
+            
+            // Initial check on load
+            handleScroll();
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+</body>
+</html>

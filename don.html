@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Donation - Buy Pencils</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f9fc;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        .donation-option {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e1e8ed;
+        }
+        .item-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .item-price {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            margin: 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+        .donate-btn {
+            background: #2ecc71;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            margin: 20px auto 0;
+        }
+        .donate-btn:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
+        .total-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px dashed #ddd;
+        }
+        .total-amount {
+            font-size: 1.5rem;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #777;
+        }
+        .qr-code-container {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .qr-code-container img {
+            width: 200px;
+            height: 200px;
+        }
+        .upi-id {
+            background: #f0f8ff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 15px 0;
+            display: inline-block;
+            border: 1px dashed #3498db;
+        }
+        .instructions {
+            font-size: 14px;
+            color: #555;
+            margin-top: 15px;
+        }
+        .donation-summary {
+            margin: 15px 0;
+            text-align: left;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .donation-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Support Our Students</h1>
+        <p class="subtitle">Your donation provides essential school supplies</p>
+        
+        <div class="donation-option">
+            <div class="item-title">
+                <span>School Pencils</span>
+                <span class="item-price">₹5 per pencil</span>
+            </div>
+            <p>Help a child write their future with quality pencils</p>
+            <div class="quantity-selector">
+                <button class="quantity-btn minus" data-item="pencil">-</button>
+                <input type="number" class="quantity-input" id="pencil-qty" value="1" min="1" max="100">
+                <button class="quantity-btn plus" data-item="pencil">+</button>
+            </div>
+        </div>
+        
+        <div class="donation-option">
+            <div class="item-title">
+                <span>Notebooks</span>
+                <span class="item-price">₹20 per notebook</span>
+            </div>
+            <p>Provide notebooks for students to record their learning</p>
+            <div class="quantity-selector">
+                <button class="quantity-btn minus" data-item="notebook">-</button>
+                <input type="number" class="quantity-input" id="notebook-qty" value="0" min="0" max="50">
+                <button class="quantity-btn plus" data-item="notebook">+</button>
+            </div>
+        </div>
+        
+        <div class="donation-option">
+            <div class="item-title">
+                <span>School Bags</span>
+                <span class="item-price">₹100 per bag</span>
+            </div>
+            <p>Give students a durable bag to carry their supplies</p>
+            <div class="quantity-selector">
+                <button class="quantity-btn minus" data-item="bag">-</button>
+                <input type="number" class="quantity-input" id="bag-qty" value="0" min="0" max="20">
+                <button class="quantity-btn plus" data-item="bag">+</button>
+            </div>
+        </div>
+        
+        <div class="total-section">
+            <p>Your total donation amount:</p>
+            <div class="total-amount" id="total-amount">₹5</div>
+            <button class="donate-btn" id="generate-qr">Generate Payment QR Code</button>
+        </div>
+    </div>
+
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Complete Your Donation</h2>
+            
+            <div class="donation-summary" id="donation-summary">
+                <!-- Filled by JavaScript -->
+            </div>
+            
+            <div class="total-amount">Total: ₹<span id="modal-total">5</span></div>
+            
+            <div class="qr-code-container">
+                <img id="dynamicQrCode" src="" alt="Google Pay QR Code">
+            </div>
+            
+            <div class="upi-id">your.upi.id@okhdfcbank</div>
+            
+            <div class="instructions">
+                <p>1. Open Google Pay app</p>
+                <p>2. Tap on "Scan QR Code"</p>
+                <p>3. Scan this code to complete payment</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Prices for each item
+        const prices = {
+            pencil: 5,
+            notebook: 20,
+            bag: 100
+        };
+        
+        // Current quantities
+        let quantities = {
+            pencil: 1,
+            notebook: 0,
+            bag: 0
+        };
+        
+        // Replace these with your actual UPI details
+        const upiId = "your.upi.id@okhdfcbank";
+        const recipientName = "Education NGO";
+        
+        // Calculate total amount
+        function calculateTotal() {
+            let total = 0;
+            for (const item in quantities) {
+                total += quantities[item] * prices[item];
+            }
+            return total;
+        }
+        
+        // Update the UI with current total
+        function updateTotalDisplay() {
+            const total = calculateTotal();
+            document.getElementById('total-amount').textContent = `₹${total}`;
+        }
+        
+        // Generate QR code URL
+        function generateQrCodeUrl(amount) {
+            const paymentUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(recipientName)}&am=${amount}&cu=INR`;
+            return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(paymentUrl)}`;
+        }
+        
+        // Show modal with donation summary and QR code
+        function showDonationModal() {
+            const total = calculateTotal();
+            if (total <= 0) {
+                alert('Please select at least one item to donate');
+                return;
+            }
+            
+            const modal = document.getElementById('qrModal');
+            const qrCodeImg = document.getElementById('dynamicQrCode');
+            const modalTotal = document.getElementById('modal-total');
+            const summaryContainer = document.getElementById('donation-summary');
+            
+            // Set the total amount
+            modalTotal.textContent = total;
+            
+            // Generate donation summary
+            let summaryHTML = '';
+            for (const item in quantities) {
+                if (quantities[item] > 0) {
+                    const itemTotal = quantities[item] * prices[item];
+                    summaryHTML += `
+                        <div class="donation-item">
+                            <span>${item.charAt(0).toUpperCase() + item.slice(1)} x${quantities[item]}</span>
+                            <span>₹${itemTotal}</span>
+                        </div>
+                    `;
+                }
+            }
+            summaryContainer.innerHTML = summaryHTML;
+            
+            // Generate and set QR code
+            qrCodeImg.src = generateQrCodeUrl(total);
+            
+            // Show modal
+            modal.style.display = 'flex';
+        }
+        
+        // Setup quantity buttons
+        document.querySelectorAll('.quantity-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const item = this.getAttribute('data-item');
+                const input = document.getElementById(`${item}-qty`);
+                let value = parseInt(input.value);
+                
+                if (this.classList.contains('plus')) {
+                    value++;
+                } else {
+                    value = Math.max(0, value - 1);
+                }
+                
+                input.value = value;
+                quantities[item] = value;
+                updateTotalDisplay();
+            });
+        });
+        
+        // Setup quantity inputs
+        document.querySelectorAll('.quantity-input').forEach(input => {
+            input.addEventListener('change', function() {
+                const item = this.id.replace('-qty', '');
+                let value = parseInt(this.value) || 0;
+                this.value = Math.max(0, value);
+                quantities[item] = parseInt(this.value);
+                updateTotalDisplay();
+            });
+        });
+        
+        // Generate QR code button
+        document.getElementById('generate-qr').addEventListener('click', showDonationModal);
+        
+        // Close modal when clicking X
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.getElementById('qrModal').style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === document.getElementById('qrModal')) {
+                document.getElementById('qrModal').style.display = 'none';
+            }
+        });
+        
+        // Initialize total display
+        updateTotalDisplay();
+    </script>
+</body>
+</html>
